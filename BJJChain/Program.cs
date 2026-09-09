@@ -23,7 +23,7 @@ class Program
 
         ExplainGenesisBlock();
 
-        Blockchain blockchain = new Blockchain(difficulty: 3);
+        BlockchainManager blockchain = new BlockchainManager(difficulty: 3);
         GraduationValidator validator = new GraduationValidator();
 
         blockchain.CreateGenesisBlock();

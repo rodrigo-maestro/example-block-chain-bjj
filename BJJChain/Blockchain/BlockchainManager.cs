@@ -6,12 +6,12 @@
     using BJJChain.Enums;
     using BJJChain.Models;
 
-    public class Blockchain
+    public class BlockchainManager
     {
         private List<Block> Chain { get; set; }
         private int Difficulty { get; set; } // Number of leading zeros in the hash
 
-        public Blockchain(int difficulty = 3)
+        public BlockchainManager(int difficulty = 3)
         {
             Chain = new List<Block>();
             Difficulty = difficulty;
