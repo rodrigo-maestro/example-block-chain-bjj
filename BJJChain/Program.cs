@@ -11,14 +11,10 @@ class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        // ====================================================
         // EDUCATIONAL INTRODUCTION
-        // ====================================================
         DisplayWelcome();
 
-        // ====================================================
         // 1. INITIALIZE BLOCKCHAIN AND COMPONENTS
-        // ====================================================
         Console.WriteLine("\n[STEP 1] Initializing blockchain with genesis block...\n");
 
         ExplainGenesisBlock();
@@ -28,9 +24,7 @@ class Program
 
         blockchain.CreateGenesisBlock();
 
-        // ====================================================
         // 2. REGISTER ACADEMIES
-        // ====================================================
         Console.WriteLine("\n[STEP 2] Registering academies...\n");
 
         Academy academy1 = new Academy("AC001", "Gracie Jiu-Jitsu Academy", "São Paulo");
@@ -39,9 +33,7 @@ class Program
         Console.WriteLine($"[OK] Academy registered: {academy1}");
         Console.WriteLine($"[OK] Academy registered: {academy2}");
 
-        // ====================================================
         // 3. REGISTER INSTRUCTORS
-        // ====================================================
         Console.WriteLine("\n[STEP 3] Registering instructors...\n");
 
         Instructor instructor1 = new Instructor("IN001", "Professor João", Belt.Black, "AC001");
@@ -53,9 +45,7 @@ class Program
         Console.WriteLine($"[OK] Instructor registered: {instructor1}");
         Console.WriteLine($"[OK] Instructor registered: {instructor2}");
 
-        // ====================================================
         // 4. REGISTER STUDENTS
-        // ====================================================
         Console.WriteLine("\n[STEP 4] Registering students...\n");
 
         Student student1 = new Student("ST001", "Carlos Silva");
@@ -67,9 +57,7 @@ class Program
         Console.WriteLine($"[OK] Student registered: {student1}");
         Console.WriteLine($"[OK] Student registered: {student2}");
 
-        // ====================================================
         // 5. FIRST GRADUATION: White → Blue
-        // ====================================================
         Console.WriteLine("\n[STEP 5] Processing first graduation: White → Blue\n");
 
         ExplainValidation();
@@ -101,9 +89,7 @@ class Program
             block1.PrintBlock();
         }
 
-        // ====================================================
         // 6. SECOND GRADUATION: Blue → Purple
-        // ====================================================
         Console.WriteLine("\n[STEP 6] Processing second graduation: Blue → Purple\n");
 
         var validation2 = validator.ValidateGraduation("ST001", "IN001", Belt.Purple);
@@ -131,9 +117,7 @@ class Program
             block2.PrintBlock();
         }
 
-        // ====================================================
         // 7. THIRD GRADUATION: Student changes academy
-        // ====================================================
         Console.WriteLine("\n[STEP 7] Student changes academy and continues training\n");
 
         ExplainBlockChaining();
@@ -163,14 +147,10 @@ class Program
             block3.PrintBlock();
         }
 
-        // ====================================================
         // 8. DISPLAY COMPLETE BLOCKCHAIN
-        // ====================================================
         blockchain.PrintChain();
 
-        // ====================================================
         // 9. DISPLAY STUDENT HISTORY
-        // ====================================================
         Console.WriteLine("\n╔══════════════════════════════════════════╗");
         Console.WriteLine("║        CARLOS SILVA - GRADUATION HISTORY ║");
         Console.WriteLine("╚══════════════════════════════════════════╝\n");
@@ -188,18 +168,14 @@ class Program
             graduationCount++;
         }
 
-        // ====================================================
         // 10. VALIDATE BLOCKCHAIN (Expected: VALID)
-        // ====================================================
         Console.WriteLine("\n[STEP 8] Validating blockchain integrity...\n");
 
         ExplainValidation2();
 
         blockchain.IsValid();
 
-        // ====================================================
         // 11. TAMPER WITH A BLOCK (Intentional modification)
-        // ====================================================
         Console.WriteLine("\n[STEP 9] Attempting to tamper with block...\n");
 
         ExplainTampering();
@@ -222,15 +198,11 @@ class Program
         Console.WriteLine($"  Old hash: {tamperedBlock.Hash.Substring(0, 16)}...");
         Console.WriteLine($"  New hash: {tamperedBlock.CalculateHash().Substring(0, 16)}...");
 
-        // ====================================================
         // 12. VALIDATE BLOCKCHAIN AGAIN (Expected: INVALID)
-        // ====================================================
         Console.WriteLine("\n[STEP 10] Validating blockchain again after tampering...\n");
         blockchain.IsValid();
 
-        // ====================================================
         // 13. FINAL SUMMARY
-        // ====================================================
         Console.WriteLine("\n╔══════════════════════════════════════════╗");
         Console.WriteLine("║              FINAL SUMMARY               ║");
         Console.WriteLine("╚══════════════════════════════════════════╝\n");
@@ -250,10 +222,7 @@ class Program
         Console.ReadKey();
     }
 
-    // ====================================================
     // EDUCATIONAL EXPLANATIONS
-    // ====================================================
-
     static void DisplayWelcome()
     {
         Console.WriteLine("\n╔══════════════════════════════════════════╗");
