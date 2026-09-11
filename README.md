@@ -1,6 +1,7 @@
 # BJJ Chain
 [![Tests](https://github.com/rodrigo-maestro/example-block-chain-bjj/actions/workflows/tests.yml/badge.svg)](https://github.com/rodrigo-maestro/example-block-chain-bjj/actions)
 [![Coverage](https://rodrigo-maestro.github.io/example-block-chain-bjj/badge_linecoverage.svg)](https://rodrigo-maestro.github.io/example-block-chain-bjj/)
+![License](https://img.shields.io/github/license/rodrigo-maestro/example-block-chain-bjj)
 
 A simple educational console application built in C# that demonstrates core **blockchain concepts** using **Brazilian Jiu-Jitsu (BJJ) belt graduations** as transactions.
 
