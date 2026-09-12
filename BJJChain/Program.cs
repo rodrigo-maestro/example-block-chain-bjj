@@ -83,7 +83,7 @@ class Program
             ExplainMining();
 
             blockchain.AddBlock(block1);
-            validator.UpdateStudentBelt("ST001", Belt.Blue);
+            validator.UpdateStudentBelt("ST001", "IN001", Belt.Blue);
 
             Console.WriteLine($"[OK] Block mined successfully!");
             block1.PrintBlock();
@@ -111,7 +111,7 @@ class Program
 
             Console.WriteLine("\nMining block...");
             blockchain.AddBlock(block2);
-            validator.UpdateStudentBelt("ST001", Belt.Purple);
+            validator.UpdateStudentBelt("ST001", "IN001", Belt.Purple);
 
             Console.WriteLine($"[OK] Block mined successfully!");
             block2.PrintBlock();
@@ -141,7 +141,7 @@ class Program
 
             Console.WriteLine("\nMining block...");
             blockchain.AddBlock(block3);
-            validator.UpdateStudentBelt("ST001", Belt.Brown);
+            validator.UpdateStudentBelt("ST001", "IN002", Belt.Brown);
 
             Console.WriteLine($"[OK] Block mined successfully!");
             block3.PrintBlock();

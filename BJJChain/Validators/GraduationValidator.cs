@@ -78,21 +78,25 @@ namespace BJJChain.Validators
         /// <summary>
         /// Updates the student's current belt
         /// </summary>
-        public void UpdateStudentBelt(string studentId, Belt newBelt)
+        public (bool IsValid, string Message) UpdateStudentBelt(string studentId, string instructorId, Belt newBelt)
         {
-            if (students.ContainsKey(studentId))
+            var validation = ValidateGraduation(studentId, instructorId, newBelt);
+
+            if (!validation.IsValid)
             {
-                students[studentId].CurrentBelt = newBelt;
+                return validation;
             }
+
+            students[studentId].CurrentBelt = newBelt;
+            return validation;
         }
 
         /// <summary>
         /// Gets the student's current belt
         /// </summary>
-        public Belt GetStudentCurrentBelt(string studentId)
+        public Belt? GetStudentCurrentBelt(string studentId)
         {
-            return students.ContainsKey(studentId) ? students[studentId].CurrentBelt : Belt.White;
+            return students.ContainsKey(studentId) ? students[studentId].CurrentBelt : null;
         }
     }
-
 }
