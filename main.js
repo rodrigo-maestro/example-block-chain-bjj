@@ -294,9 +294,9 @@ var assemblies = [
       { "name": "BJJChain.Blockchain.BlockchainManager", "rp": "BJJChain_BlockchainManager.html", "cl": 44, "ucl": 8, "cal": 52, "tl": 139, "cb": 11, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "BJJChain.Models.Academy", "rp": "BJJChain_Academy.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "BJJChain.Models.GraduationEvent", "rp": "BJJChain_GraduationEvent.html", "cl": 23, "ucl": 1, "cal": 24, "tl": 40, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BJJChain.Models.Instructor", "rp": "BJJChain_Instructor.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BJJChain.Models.Student", "rp": "BJJChain_Student.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 26, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BJJChain.Validators.GraduationValidator", "rp": "BJJChain_GraduationValidator.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 98, "cb": 0, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BJJChain.Models.Instructor", "rp": "BJJChain_Instructor.html", "cl": 10, "ucl": 1, "cal": 11, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BJJChain.Models.Student", "rp": "BJJChain_Student.html", "cl": 10, "ucl": 1, "cal": 11, "tl": 26, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BJJChain.Validators.GraduationValidator", "rp": "BJJChain_GraduationValidator.html", "cl": 27, "ucl": 0, "cal": 27, "tl": 102, "cb": 14, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "Program", "rp": "BJJChain_Program.html", "cl": 0, "ucl": 266, "cal": 266, "tl": 414, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
