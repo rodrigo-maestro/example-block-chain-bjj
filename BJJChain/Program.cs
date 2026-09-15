@@ -65,15 +65,17 @@ class Program
         ExplainValidation();
 
         var result1 = graduationService.PromoteStudent(
-            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Blue);
+            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Blue,
+            onMiningStart: () =>
+            {
+                Console.WriteLine("\n--- Mining Process Starting ---\n");
+                ExplainMining();
+            });
 
         Console.WriteLine(result1.Message);
 
         if (result1.Success)
         {
-            Console.WriteLine("\n--- Mining Process Starting ---\n");
-            ExplainMining();
-
             Console.WriteLine($"[OK] Block mined successfully!");
             result1.Block.PrintBlock();
         }
@@ -82,13 +84,13 @@ class Program
         Console.WriteLine("\n[STEP 6] Processing second graduation: Blue → Purple\n");
 
         var result2 = graduationService.PromoteStudent(
-            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Purple);
+            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Purple,
+            onMiningStart: () => Console.WriteLine("\nMining block..."));
 
         Console.WriteLine(result2.Message);
 
         if (result2.Success)
         {
-            Console.WriteLine("\nMining block...");
             Console.WriteLine($"[OK] Block mined successfully!");
             result2.Block.PrintBlock();
         }
@@ -99,13 +101,13 @@ class Program
         ExplainBlockChaining();
 
         var result3 = graduationService.PromoteStudent(
-            "ST001", "Carlos Silva", "AC002", "IN002", Belt.Brown);
+            "ST001", "Carlos Silva", "AC002", "IN002", Belt.Brown,
+            onMiningStart: () => Console.WriteLine("\nMining block..."));
 
         Console.WriteLine(result3.Message);
 
         if (result3.Success)
         {
-            Console.WriteLine("\nMining block...");
             Console.WriteLine($"[OK] Block mined successfully!");
             result3.Block.PrintBlock();
         }

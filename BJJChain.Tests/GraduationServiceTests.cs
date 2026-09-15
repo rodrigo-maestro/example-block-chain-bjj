@@ -88,5 +88,20 @@ namespace BJJChain.Tests
             Assert.Equal(result1.Block.Hash, result2.Block.PreviousHash);
             Assert.Equal(Belt.Purple, validator.GetStudentCurrentBelt("ST001"));
         }
+
+        [Fact]
+        public void PromoteStudent_ValidGraduation_ShouldInvokeOnMiningStartCallback()
+        {
+            var (blockchain, validator, service) = CreateService();
+            validator.RegisterStudent(CreateStudent());
+            validator.RegisterInstructor(CreateInstructor());
+
+            var callbackInvoked = false;
+
+            service.PromoteStudent("ST001", "Test Student", "AC001", "IN001", Belt.Blue,
+                onMiningStart: () => callbackInvoked = true);
+
+            Assert.True(callbackInvoked);
+        }
     }
 }

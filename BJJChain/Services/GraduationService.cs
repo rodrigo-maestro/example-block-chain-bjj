@@ -19,24 +19,26 @@ namespace BJJChain.Services
 
         public (bool Success, string Message, Block Block) PromoteStudent(
             string studentId, string studentName, string academyId,
-            string instructorId, Belt newBelt)
+            string instructorId, Belt newBelt, Action onMiningStart = null)
         {
             var currentBelt = validator.GetStudentCurrentBelt(studentId) ?? Belt.White;
 
-            var updateResult = validator.UpdateStudentBelt(studentId, instructorId, newBelt);
-            if (!updateResult.IsValid)
+            var validation = validator.UpdateStudentBelt(studentId, instructorId, newBelt);
+            if (!validation.IsValid)
             {
-                return (false, updateResult.Message, null);
+                return (false, validation.Message, null);
             }
 
             var graduationEvent = new GraduationEvent(
                 studentId, studentName, academyId, instructorId,
                 currentBelt, newBelt, DateTime.Now);
 
+            onMiningStart?.Invoke();
+
             var block = new Block(index: 0, graduationEvent, previousHash: string.Empty);
             blockchain.AddBlock(block);
 
-            return (true, updateResult.Message, block);
+            return (true, validation.Message, block);
         }
     }
 }
