@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BJJChain.Blockchain;
 using BJJChain.Enums;
 using BJJChain.Models;
+using BJJChain.Services;
 using BJJChain.Validators;
 
 class Program
@@ -21,6 +22,7 @@ class Program
 
         BlockchainManager blockchain = new BlockchainManager(difficulty: 3);
         GraduationValidator validator = new GraduationValidator();
+        GraduationService graduationService = new GraduationService(blockchain, validator);
 
         blockchain.CreateGenesisBlock();
 
@@ -62,59 +64,33 @@ class Program
 
         ExplainValidation();
 
-        var validation1 = validator.ValidateGraduation("ST001", "IN001", Belt.Blue);
-        Console.WriteLine(validation1.Message);
+        var result1 = graduationService.PromoteStudent(
+            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Blue);
 
-        if (validation1.IsValid)
+        Console.WriteLine(result1.Message);
+
+        if (result1.Success)
         {
-            GraduationEvent graduation1 = new GraduationEvent(
-                studentId: "ST001",
-                studentName: "Carlos Silva",
-                academyId: "AC001",
-                instructorId: "IN001",
-                previousBelt: Belt.White,
-                newBelt: Belt.Blue,
-                date: DateTime.Now
-            );
-
-            Block block1 = new Block(1, graduation1, blockchain.GetBlock(0).Hash);
-
             Console.WriteLine("\n--- Mining Process Starting ---\n");
             ExplainMining();
 
-            blockchain.AddBlock(block1);
-            validator.UpdateStudentBelt("ST001", "IN001", Belt.Blue);
-
             Console.WriteLine($"[OK] Block mined successfully!");
-            block1.PrintBlock();
+            result1.Block.PrintBlock();
         }
 
         // 6. SECOND GRADUATION: Blue → Purple
         Console.WriteLine("\n[STEP 6] Processing second graduation: Blue → Purple\n");
 
-        var validation2 = validator.ValidateGraduation("ST001", "IN001", Belt.Purple);
-        Console.WriteLine(validation2.Message);
+        var result2 = graduationService.PromoteStudent(
+            "ST001", "Carlos Silva", "AC001", "IN001", Belt.Purple);
 
-        if (validation2.IsValid)
+        Console.WriteLine(result2.Message);
+
+        if (result2.Success)
         {
-            GraduationEvent graduation2 = new GraduationEvent(
-                studentId: "ST001",
-                studentName: "Carlos Silva",
-                academyId: "AC001",
-                instructorId: "IN001",
-                previousBelt: Belt.Blue,
-                newBelt: Belt.Purple,
-                date: DateTime.Now.AddMonths(6)
-            );
-
-            Block block2 = new Block(2, graduation2, blockchain.GetBlock(1).Hash);
-
             Console.WriteLine("\nMining block...");
-            blockchain.AddBlock(block2);
-            validator.UpdateStudentBelt("ST001", "IN001", Belt.Purple);
-
             Console.WriteLine($"[OK] Block mined successfully!");
-            block2.PrintBlock();
+            result2.Block.PrintBlock();
         }
 
         // 7. THIRD GRADUATION: Student changes academy
@@ -122,29 +98,16 @@ class Program
 
         ExplainBlockChaining();
 
-        var validation3 = validator.ValidateGraduation("ST001", "IN002", Belt.Brown);
-        Console.WriteLine(validation3.Message);
+        var result3 = graduationService.PromoteStudent(
+            "ST001", "Carlos Silva", "AC002", "IN002", Belt.Brown);
 
-        if (validation3.IsValid)
+        Console.WriteLine(result3.Message);
+
+        if (result3.Success)
         {
-            GraduationEvent graduation3 = new GraduationEvent(
-                studentId: "ST001",
-                studentName: "Carlos Silva",
-                academyId: "AC002",
-                instructorId: "IN002",
-                previousBelt: Belt.Purple,
-                newBelt: Belt.Brown,
-                date: DateTime.Now.AddMonths(18)
-            );
-
-            Block block3 = new Block(3, graduation3, blockchain.GetBlock(2).Hash);
-
             Console.WriteLine("\nMining block...");
-            blockchain.AddBlock(block3);
-            validator.UpdateStudentBelt("ST001", "IN002", Belt.Brown);
-
             Console.WriteLine($"[OK] Block mined successfully!");
-            block3.PrintBlock();
+            result3.Block.PrintBlock();
         }
 
         // 8. DISPLAY COMPLETE BLOCKCHAIN
