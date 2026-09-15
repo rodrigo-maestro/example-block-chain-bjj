@@ -296,9 +296,9 @@ var assemblies = [
       { "name": "BJJChain.Models.GraduationEvent", "rp": "BJJChain_GraduationEvent.html", "cl": 23, "ucl": 1, "cal": 24, "tl": 40, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "BJJChain.Models.Instructor", "rp": "BJJChain_Instructor.html", "cl": 10, "ucl": 1, "cal": 11, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "BJJChain.Models.Student", "rp": "BJJChain_Student.html", "cl": 10, "ucl": 1, "cal": 11, "tl": 26, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BJJChain.Services.GraduationService", "rp": "BJJChain_GraduationService.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 42, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BJJChain.Services.GraduationService", "rp": "BJJChain_GraduationService.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 44, "cb": 4, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "BJJChain.Validators.GraduationValidator", "rp": "BJJChain_GraduationValidator.html", "cl": 27, "ucl": 0, "cal": 27, "tl": 102, "cb": 14, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "BJJChain_Program.html", "cl": 0, "ucl": 234, "cal": 234, "tl": 377, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "BJJChain_Program.html", "cl": 0, "ucl": 237, "cal": 237, "tl": 379, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
